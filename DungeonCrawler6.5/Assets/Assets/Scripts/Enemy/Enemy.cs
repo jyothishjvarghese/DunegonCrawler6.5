@@ -9,9 +9,15 @@ public abstract class Enemy : MonoBehaviour
 
     [SerializeField]
     protected Transform pointA, pointB;
+    [SerializeField]
+    protected int health;
+    [SerializeField]
+    protected int speed;
+    [SerializeField]
+    protected int gems;
 
     private bool _switch;
-    private float speed = 1.0f;
+
 	
 
     public virtual void Init()

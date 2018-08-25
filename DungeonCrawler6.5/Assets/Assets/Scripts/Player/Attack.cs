@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : MonoBehaviour {
+public class Attack : MonoBehaviour
+{
 
     // Use this for initialization
-    public void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.collider != null)
-        Debug.Log("Hit" + gameObject);
+        Debug.Log("Hit: " + other.name);
+
+        IDamagable hit = other.GetComponent<IDamagable>();
+
+        if(hit != null)
+        {
+            hit.Damage();
+        }
+
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
+    
 }
