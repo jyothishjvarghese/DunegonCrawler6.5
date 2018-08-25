@@ -2,15 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IDamagable : MonoBehaviour {
+public interface IDamagable
+{
+    int Health { get; set; }
+    void Damage();
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

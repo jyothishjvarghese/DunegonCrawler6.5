@@ -40,14 +40,14 @@ public abstract class Enemy : MonoBehaviour
         {
             _switch = true;
             anim.SetTrigger("Idle");
-            //sprite.flipX = false;
+            sprite.flipX = false;
 
         }
         else if(transform.position == pointB.position)
         {
             _switch = false;
             anim.SetTrigger("Idle");
-            //sprite.flipX = true;
+            sprite.flipX = true;
         }
         if(_switch == true)
         {
@@ -57,5 +57,9 @@ public abstract class Enemy : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, pointA.position, speed * Time.deltaTime);
         }
+    }
+    public virtual void Attack()
+    {
+
     }
 }
